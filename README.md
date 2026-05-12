@@ -36,14 +36,17 @@ Harmful Algal Blooms (HABs) pose significant risks to recreational water quality
 ## Repository Structure
 
 ```text
-/firmware
-    Arduino source code for sensor data acquisition and pump control.
+/Diagrams
+    Wiring diagrams of system
 
 /Documentation
-    Hardware schematics, 3D reservoir models, and calibration notes.
+    Formal IEEE report and presentation files
 
-/ML_Code
-    Python scripts for machine learning model training and inference.
+/Code
+    Python scripts for machine learning model training and inference. Driver code for arduino
+
+/3D Models
+    Fusion Model of complete system
 ```
 
 ---
