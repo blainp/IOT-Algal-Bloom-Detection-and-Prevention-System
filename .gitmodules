@@ -1,3 +1,3 @@
-[submodule "MLCode"]
-	path = MLCode
+[submodule "ML Code"]
+	path = ML Code
 	url = https://github.com/jessbroder/algalbloom_IOT.git
