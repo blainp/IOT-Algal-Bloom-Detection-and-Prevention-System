@@ -6,7 +6,7 @@ This repository contains the technical documentation, firmware, and machine lear
 
 ## Project Overview
 
-Harmful Algal Blooms (HABs) pose significant risks to recreational water quality and aquatic ecosystems. This project demonstrates a low-cost, field-deployable solution that uses physical water sensors to predict chlorophyll-a (Chla) levels — a key indicator of algal growth — using Random Forest and Gradient Boosting machine learning models.
+Harmful Algal Blooms (HABs) pose significant risks to recreational water quality and aquatic ecosystems. This project demonstrates a low-cost, field-deployable solution that uses physical water sensors to predict chlorophyll-a (Chla) levels, a key indicator of algal growth, using Random Forest and Gradient Boosting machine learning models.
 
 ---
 
