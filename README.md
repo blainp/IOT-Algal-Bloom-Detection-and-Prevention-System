@@ -5,8 +5,8 @@ This repository contains the technical documentation, firmware, and machine lear
 
 ## Project Overview
 <p align="center">
-  <img width="530" src="https://github.com/user-attachments/assets/93eb603f-b4d4-41a7-8a43-496c608952b2" alt="System Diagram">
-  <img width="470" alt="Screenshot 2025-11-25 133809" src="https://github.com/user-attachments/assets/9647b5d3-e0db-49aa-8af9-4785628f9f04" />
+  <img width="424" src="https://github.com/user-attachments/assets/93eb603f-b4d4-41a7-8a43-496c608952b2" alt="System Diagram">
+  <img width="376" alt="Screenshot 2025-11-25 133809" src="https://github.com/user-attachments/assets/9647b5d3-e0db-49aa-8af9-4785628f9f04" />
 </p>
 
 
