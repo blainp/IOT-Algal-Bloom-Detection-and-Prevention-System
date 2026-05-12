@@ -1,99 +1,122 @@
+# Algal Bloom IoT Monitoring System
 
-Algal Bloom IoT Monitoring System
-This repository contains the technical documentation, firmware, and machine learning models for an inexpensive, IoT-based water quality monitoring system designed to predict the risk of harmful algal blooms.  
-+3
+This repository contains the technical documentation, firmware, and machine learning models for an inexpensive, IoT-based water quality monitoring system designed to predict harmful algal blooms (HABs).
 
-Project Overview
-Harmful Algal Blooms (HABs) pose significant risks to recreational water quality and aquatic ecosystems. This project demonstrates a low-cost, field-deployable solution that uses physical water sensors to predict chlorophyll-a (Chla) levels—a key indicator of algal growth—using Random Forest and Gradient Boosting machine learning models.  
-+3
+---
 
-Features
+## Project Overview
 
-Real-Time Monitoring: Collects pH, conductivity, temperature, and turbidity data.  
-+4
+Harmful Algal Blooms (HABs) pose significant risks to recreational water quality and aquatic ecosystems. This project demonstrates a low-cost, field-deployable solution that uses physical water sensors to predict chlorophyll-a (Chla) levels — a key indicator of algal growth — using Random Forest and Gradient Boosting machine learning models.
 
+---
 
-Active Sampling: Features a reservoir and pump system for consistent sample acquisition.  
+## Features
 
+### Real-Time Monitoring
+- Collects:
+  - pH
+  - Conductivity
+  - Temperature
+  - Turbidity
 
-Automated Alerting: Sends email alerts via Gmail when high-risk algal growth is detected.  
-+1
+### Active Sampling System
+- Uses a reservoir and pump system for consistent sample acquisition.
 
+### Automated Alerting
+- Sends Gmail email alerts when high-risk algal growth is detected.
 
-Predictive Analytics: Uses supervised learning with surrogate thresholds to classify bloom risk into three levels: algae_absent, algae_may_be_present, and algae_present.  
-+1
+### Predictive Analytics
+- Uses supervised machine learning with surrogate thresholds to classify bloom risk into:
+  - `algae_absent`
+  - `algae_may_be_present`
+  - `algae_present`
 
-Repository Structure
+---
 
-/firmware: Arduino/ESP32 source code for sensor data acquisition and pump control.  
-+1
+## Repository Structure
 
+```text
+/firmware
+    Arduino source code for sensor data acquisition and pump control.
 
-/Documentation: Hardware schematics, 3D models for the reservoir, and calibration notes.  
+/Documentation
+    Hardware schematics, 3D reservoir models, and calibration notes.
 
+/ML_Code
+    Python scripts for machine learning model training and inference.
+```
 
-/ML_Code: Python scripts for model training and inference (Linked via submodule).  
-+1
+---
 
-Bill of Materials (BOM)
-The system is built using the following core components identified in the technical report:
+## Bill of Materials (BOM)
 
-Component	Description	Notes
-Microcontroller	IoT-enabled board (Arduino/ESP32)	
-Manages sensors and connectivity.
+| Component | Description | Function |
+|---|---|---|
+| Microcontroller | IoT-enabled board (Arduino / ESP32) | Manages sensors and connectivity |
+| pH Probe | Analog pH measurement probe | Monitors chemical spikes |
+| Conductivity Sensor | Proxy indicator for nutrient levels | Detects high nutrient concentration (>300) |
+| Turbidity Sensor | Measures water cloudiness | Low-cost surrogate for chlorophyll-a |
+| Temperature Sensor | Waterproof DS18B20 probe | Tracks thermal growth conditions |
+| Vacuum Pump | Micro 370 motor pump | Pulls water samples into the reservoir |
+| Solenoid Valve | 12V valve | Responsible for draining the system |
+| Boost Converter | XL6009 module | Converts 3.3V to 12V for solenoid operation |
 
-pH Probe	Analog pH measurement probe	
-Requires frequent maintenance.
+---
 
-Conductivity Sensor	Proxy-indicator for nutrient enrichment	
-Key indicator for algal growth.
+## Machine Learning Performance
 
-Turbidity Sensor	Measures physical water cloudiness	
-Inexpensive sensor used for training.
+The system utilizes a surrogate threshold approach based on chlorophyll-a (Chla) guidelines from Health Canada using a **33 µg/L cutoff** for primary-contact water safety.
 
-Temperature Sensor	Waterproof probe	
-Monitors thermal conditions.
+### Performance Metrics
 
-Reservoir System	Custom housing for water samples	
-Requires 12V solenoid for drainage.
+- **Model Agreement Rate:** `84.74%`
+  - Agreement between Random Forest and Gradient Boosting models on test data.
 
-Active Pump	Micro vacuum pump	
-Pulls samples into the reservoir.
+- **Primary Optimization Metric:** `Precision`
+  - Designed to minimize false alarms while maintaining high sensitivity.
 
-Power Supply	3.3V Input with XL6009 Boost Converter	
-Converts 3.3V to 12V for solenoid.
+---
 
-Machine Learning Results
-The system utilizes a surrogate threshold approach based on Chlorophyll-a (Chla) guidelines from the "Guidelines for Canadian Recreational Water Quality" (33 µg/L cutoff for primary contact).  
-+2
+## Installation & Setup
 
+### 1. Clone the Repository
 
-Model Agreement Rate: 84.74% between Random Forest and Gradient Boosting on test data.  
+```bash
+git clone https://github.com/DorkyJuice/algalbloom_IOT.git
+```
 
+### 2. Initialize Submodules
 
-Key Metric: Focused on Precision to minimize false alarms while ensuring high sensitivity for dangerous cases.  
-+1
+```bash
+git submodule update --init --recursive
+```
 
-Installation & Setup
-Clone the Repository: git clone https://github.com/DorkyJuice/algalbloom_IOT.git
+### 3. Install Python Requirements
 
-Initialize Submodules: git submodule update --init --recursive
+```bash
+pip install -r requirements.txt
+```
 
-Install Python Requirements: pip install -r requirements.txt
+---
 
-Flash Firmware: Upload the code in /firmware to your microcontroller using the Arduino IDE.
+## Known Constraints & Future Recommendations
 
-Recommendations for Field Deployment
-Based on initial testing, future iterations should prioritize:
+### Optimization
+The current reservoir design is oversized for practical field deployment, leading to unnecessary energy consumption.
 
+### Power Efficiency
+The use of a 12V solenoid with a boost converter introduces substantial power losses. A native 3.3V solenoid is recommended for future revisions.
 
-Optimization: Reducing reservoir size to save energy and reagent volume.  
+### Sensor Maintenance
+The low-cost pH probe used in the prototype is highly sensitive and requires frequent recalibration and maintenance.
 
+---
 
-Power Efficiency: Replacing the 12V solenoid with a 3.3V version to remove the need for an inefficient boost converter.  
+## References
 
+This project was developed using guidance and threshold recommendations from:
 
-Data Quality: Utilizing more robust pH measurement methods.  
+- BC Ministry of Environment
+- Health Canada
 
-References
-This project was developed based on guidelines from the BC Ministry of Environment and Health Canada. Full references are available in the technical report.
+Additional references and citations are included in the Technical Report.
