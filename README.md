@@ -38,8 +38,8 @@ Harmful Algal Blooms (HABs) pose significant risks to recreational water quality
 ---
 
 <p align="center">
-<img width="470" alt="Snesor from front" src="https://github.com/user-attachments/assets/32d2aa59-d374-4e87-b092-e173afab4def" />
-<img width="530" alt="betterclip2" src="https://github.com/user-attachments/assets/0319e15f-4df9-43eb-88ad-280d600d6044" />
+<img width="376" alt="Snesor from front" src="https://github.com/user-attachments/assets/32d2aa59-d374-4e87-b092-e173afab4def" />
+<img width="424" alt="betterclip2" src="https://github.com/user-attachments/assets/0319e15f-4df9-43eb-88ad-280d600d6044" />
 </p>
 
 
