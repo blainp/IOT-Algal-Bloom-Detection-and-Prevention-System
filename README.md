@@ -1,10 +1,14 @@
 # Algal Bloom IoT Monitoring System
-
 This repository contains the technical documentation, firmware, and machine learning models for an inexpensive, IoT-based water quality monitoring system designed to predict harmful algal blooms (HABs).
 
 ---
 
 ## Project Overview
+<p align="center">
+  <img width="530" src="https://github.com/user-attachments/assets/93eb603f-b4d4-41a7-8a43-496c608952b2" alt="System Diagram">
+  <img width="470" alt="Screenshot 2025-11-25 133809" src="https://github.com/user-attachments/assets/9647b5d3-e0db-49aa-8af9-4785628f9f04" />
+</p>
+
 
 Harmful Algal Blooms (HABs) pose significant risks to recreational water quality and aquatic ecosystems. This project demonstrates a low-cost, field-deployable solution that uses physical water sensors to predict chlorophyll-a (Chla) levels, a key indicator of algal growth, using Random Forest and Gradient Boosting machine learning models.
 
@@ -22,6 +26,7 @@ Harmful Algal Blooms (HABs) pose significant risks to recreational water quality
 ### Active Sampling System
 - Uses a reservoir and pump system for consistent sample acquisition.
 
+
 ### Automated Alerting
 - Sends Gmail email alerts when high-risk algal growth is detected.
 
@@ -30,8 +35,14 @@ Harmful Algal Blooms (HABs) pose significant risks to recreational water quality
   - `algae_absent`
   - `algae_may_be_present`
   - `algae_present`
-
 ---
+
+<p align="center">
+<img width="470" alt="Snesor from front" src="https://github.com/user-attachments/assets/32d2aa59-d374-4e87-b092-e173afab4def" />
+<img width="530" alt="betterclip2" src="https://github.com/user-attachments/assets/0319e15f-4df9-43eb-88ad-280d600d6044" />
+</p>
+
+
 
 ## Repository Structure
 
